@@ -882,11 +882,7 @@ namespace aux {
 		session_log(" aborting all connections (%d)", int(m_connections.size()));
 #endif
 		// abort all connections
-		// keep in mind that connections that are not associated with a torrent
-		// will remove its entry from m_connections immediately, which means we
-		// can't iterate over it here
-		auto conns = m_connections;
-		for (auto const& p : conns)
+		for (auto const& p : m_connections)
 			p->disconnect(errors::stopping_torrent, operation_t::bittorrent);
 
 		// close the listen sockets
