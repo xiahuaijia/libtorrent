@@ -4416,6 +4416,7 @@ namespace libtorrent {
 		// have been destructed
 		if (m_peer_list) m_peer_list->clear();
 		m_connections.clear();
+		m_peers_to_disconnect.clear();
 		m_num_uploads = 0;
 		m_num_connecting = 0;
 		m_num_connecting_seeds = 0;
